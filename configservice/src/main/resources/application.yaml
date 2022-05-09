@@ -1,0 +1,13 @@
+
+server:
+    port: 9090
+
+spring:
+    application:
+        name: CONFIG-SVC
+    cloud:
+        config:
+            server:
+                git: 
+                    uri: https://github.com/xqcao/config_demo/blob/main/myconfig.yaml
+                    clone-on-start: true

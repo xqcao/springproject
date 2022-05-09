@@ -20,3 +20,11 @@ spring boot
     5. config-server
         -eureka-client
         -config-server
+
+
+start:
+    1. eureka-server
+    2. config-server
+    3. department-server
+    4. user-server
+    5. gateway-server
