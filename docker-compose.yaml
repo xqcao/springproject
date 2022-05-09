@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  configservice:
+    build: ./configservice/Dockerfile
+    container_name: configservice
+    ports:
+      - "9090:9090"
+  eurekaservice:
+    build: ./eurekaservice/Dockerfile
+    container_name: eurekaservice
+    ports:
+      - "8761:8761"
+    depends_on:
+      - configservice
+  departmentservice:
+    build: ./departmentservice/Dockerfile
+    container_name: departmentservice
+    ports:
+      - "9001:9001"
+    depends_on:
+      - configservice
+      - eurekaservice
+  userservice:
+    build: ./userservice/Dockerfile
+    container_name: userservice
+    ports:
+      - "9002:9002"
+    depends_on:
+      - configservice
+      - eurekaservice
+  gatewayservice:
+    build: ./gatewayservice/Dockerfile
+    container_name: gatewayservice
+    ports:
+      - "9191:9191"
+    depends_on:
+      - configservice
+      - eurekaservice
+      - userservice
+      - departmentservice
