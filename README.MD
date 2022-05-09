@@ -8,29 +8,29 @@
 
 # spring boot
 1. user-server
-    - h2
-    - eureka-client
-    - config-cloud
-    - jpa
-    - web
-    - bootstrap
+    1. h2
+    2. eureka-client
+    3. config-cloud
+    4. jpa
+    5. web
+    6. bootstrap
 2. department-server
-    - h2
-    - eureka-client
-    - config-cloud
-    - jpa
-    - web
-    - bootstrap
+    1. h2
+    2. eureka-client
+    3. config-cloud
+    4. jpa
+    5. web
+    6. bootstrap
 3. eureka-server
-    - eureka-server
+    1. eureka-server
 4. gateway-server
-    - eureka-client
-    - gateway
-    - actuator
-    - bootstrap
+    1. eureka-client
+    2. gateway
+    3. actuator
+    4. bootstrap
 5. config-server
-    - eureka-client
-    - config-server
+    1. eureka-client
+    2. config-server
 
 
 ## start:
