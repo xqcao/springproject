@@ -28,9 +28,7 @@ public class UserService {
     public List<User> findAllUser(){
         return userRepository.findAll();
     }
-    public User updateUser(User user){
-        return userRepository.update(user);
-    }
+    
     public UserResponseTemplate findUserDetails(Long userId) {
         UserResponseTemplate vo = new UserResponseTemplate();
         User user = userRepository.findByUserId(userId);

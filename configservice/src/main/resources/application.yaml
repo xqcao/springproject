@@ -9,5 +9,5 @@ spring:
         config:
             server:
                 git: 
-                    uri: https://github.com/xqcao/config_demo/blob/main/myconfig.yaml
+                    uri: https://github.com/xqcao/config_demo
                     clone-on-start: true

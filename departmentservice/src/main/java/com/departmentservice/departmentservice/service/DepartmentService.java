@@ -24,9 +24,7 @@ public class DepartmentService {
     public List<Department> findAll(){
         return departmentRepository.findAll();
     }
-    public Department updateOne(Department dep){
-        return departmentRepository.update(dep);
-    }
+   
 
 
     public List<Department> findAllDepartment() {

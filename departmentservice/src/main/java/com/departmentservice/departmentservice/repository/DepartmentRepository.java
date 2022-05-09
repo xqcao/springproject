@@ -10,6 +10,6 @@ public interface DepartmentRepository extends JpaRepository<Department,Long> {
 
     Department findByDepartmentId(Long depId);
 
-    Department update(Department dep);
+
     
 }
