@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clouddepartment
+  namespace: spingproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clouddepartment
+  template:
+    metadata:
+      labels:
+        app: clouddepartment
+    spec:
+      containers:
+        - name: departmentapp
+          image: adamcao/departmentservice:1.0
+          ports:
+            - containerPort: 9001
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: department-svc
+  namespace: spingproject
+spec:
+  selector:
+    app: departmentapp
+  ports:
+    - port: 9001
+      targetPort: 9001
+  type: ClusterIP

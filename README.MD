@@ -39,6 +39,3 @@
 3. department-server
 4. user-server
 5. gateway-server
-
-
-

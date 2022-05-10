@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudconfig
+  namespace: spingproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudconfig
+  template:
+    metadata:
+      labels:
+        app: cloudconfig
+    spec:
+      containers:
+        - name: configapp
+          image: adamcao/configservice:1.0
+          ports:
+            - containerPort: 9090
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: config-svc
+  namespace: spingproject
+spec:
+  selector:
+    app: configapp
+  ports:
+    - port: 9090
+      targetPort: 9090
+  type: ClusterIP
