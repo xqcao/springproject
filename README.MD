@@ -39,3 +39,19 @@
 3. department-server
 4. user-server
 5. gateway-server
+
+# docker & docker-compose
+```
+docker-compose build -d
+or
+docker-compose up -d --build
+
+docker-compose push
+
+```
+
+# kubernetes
+```
+kubectl apply -f k8sfiles/
+
+```
